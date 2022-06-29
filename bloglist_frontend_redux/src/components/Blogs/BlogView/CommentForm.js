@@ -17,13 +17,15 @@ const CommentForm = ({ id }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
       <input
         type="text"
         value={comment}
         onChange={(e) => setComment(e.target.value)}
+        placeholder="Type something..."
+        className="p-2 rounded-sm"
       />
-      <button>add comment</button>
+      <button className="py-2 bg-blue-400 rounded-sm">Comment</button>
     </form>
   )
 }

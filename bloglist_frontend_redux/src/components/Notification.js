@@ -4,7 +4,7 @@ const Notification = () => {
   const message = useSelector((state) => state.notification)
 
   return (
-    <div className="noti">
+    <div className="px-2 bg-green-300">
       <p>{message}</p>
     </div>
   )

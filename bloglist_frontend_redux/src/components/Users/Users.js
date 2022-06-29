@@ -2,26 +2,19 @@ import { Link } from 'react-router-dom'
 
 const Users = ({ users }) => {
   return (
-    <div className="users-info">
-      <h2>Users</h2>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>blogs created</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>
-                <Link to={`/users/${user.id}`}>{user.name}</Link>
-              </td>
-              <td>{user.blogs.length}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div>
+      <h2 className="text-center text-3xl my-8 font-bold">Users</h2>
+      <div>
+        <div className="text-right font-light">Blogs created</div>
+        {users.map((user) => (
+          <Link key={user.id} to={`/users/${user.id}`}>
+            <div className="flex justify-between text-lg">
+              <div className="font-bold">{user.name}</div>
+              <div className="font-semibold">{user.blogs.length}</div>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }

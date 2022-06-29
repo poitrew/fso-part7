@@ -36,16 +36,20 @@ const App = () => {
   // ----------------------- EVENT HANDLERS ------------------------
 
   return (
-    <div className="App">
-      <Notification />
-      <LoginForm />
-      <Routes>
-        <Route path="/users/:id" element={<UserView users={users} />} />
-        <Route path="/blogs/:id" element={<BlogView blogs={blogs} />} />
-        <Route path="/users" element={<Users users={users} />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/" element={<Blogs />} />
-      </Routes>
+    <div className="bg-gray-100 h-screen text-slate-800 p-4">
+      <div>
+        <Notification />
+        <LoginForm />
+      </div>
+      <div className="max-w-6xl py-8 mx-auto">
+        <Routes>
+          <Route path="/users/:id" element={<UserView users={users} />} />
+          <Route path="/blogs/:id" element={<BlogView blogs={blogs} />} />
+          <Route path="/users" element={<Users users={users} />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/" element={<Blogs />} />
+        </Routes>
+      </div>
     </div>
   )
 }

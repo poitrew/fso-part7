@@ -1,21 +1,13 @@
 import { Link } from 'react-router-dom'
 
 const Blog = ({ blog }) => {
-  const blogStyle = {
-    paddingTop: 10,
-    paddingLeft: 2,
-    border: 'solid',
-    borderWidth: 1,
-    marginBottom: 5,
-  }
-
   return (
     <div>
-      <div className="blog" style={blogStyle}>
-        <Link to={`/blogs/${blog.id}`}>
+      <Link to={`/blogs/${blog.id}`}>
+        <div className="p-6 rounded-md bg-slate-800 text-gray-100">
           {blog.title} {blog.author}{' '}
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   )
 }

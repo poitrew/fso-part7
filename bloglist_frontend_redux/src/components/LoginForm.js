@@ -52,37 +52,38 @@ const LoginForm = () => {
   }, [])
 
   const render = loggedIn ? (
-    <>
-      <Nav />
-      <h2>Blog app</h2>
-    </>
+    <Nav />
   ) : (
     <>
-      <h2>Log in to app</h2>
-      <form onSubmit={handleLogin}>
-        <label>
-          username
-          <input
-            id="username"
-            type="text"
-            name="username"
-            value={credentials.username}
-            onChange={handleChange}
-          ></input>
-        </label>
-        <br />
-        <label>
-          password
-          <input
-            id="password"
-            type="password"
-            name="password"
-            value={credentials.password}
-            onChange={handleChange}
-          ></input>
-        </label>
-        <br />
-        <button type="submit">login</button>
+      <h2 className="text-2xl mb-8">Login to blogs app</h2>
+      <form
+        onSubmit={handleLogin}
+        className="flex flex-col w-4/5 mx-auto gap-4 items-center"
+      >
+        <input
+          id="username"
+          type="text"
+          name="username"
+          value={credentials.username}
+          onChange={handleChange}
+          placeholder="Username"
+          className="p-2 rounded-md w-full"
+        ></input>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          value={credentials.password}
+          onChange={handleChange}
+          placeholder="Password"
+          className="p-2 rounded-md w-full"
+        ></input>
+        <button
+          type="submit"
+          className="bg-slate-800 w-24 p-2 rounded-md text-gray-100"
+        >
+          Login
+        </button>
       </form>
     </>
   )
